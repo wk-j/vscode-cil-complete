@@ -1,0 +1,90 @@
+{
+    "name": "il",
+    "fileTypes": [
+        "il"
+    ],
+    "scopeName": "source.il",
+    "uuid": "9E4413EF-B97B-4BC4-A613-15640530F4D5",
+    "variables": {
+        "label": "[A-Za-z_][A-Za-z_0-9]+"
+    },
+    "patterns": [
+        {
+            "match": "^\\s*(.assembly|.module|.class|.maxstack|.hash|.method|.imagebase|.stackreserve|.subsystem|.corflags|.publickeytoken|.custom|.entrypoint)\\b",
+            "name": "keyword.control"
+        },
+        {
+            "match": "^\\s*([A-Za-z_][A-Za-z_0-9]+:)?\\s*(ret|nop|ldarg.\\d|ldstr|call|ldlen|stloc.\\d|ldloc.\\d|newobj|ldc.i4.\\d)\\b",
+            "captures": {
+                "1": {
+                    "name": "entity.name.tag"
+                },
+                "2": {
+                    "name": "entity.name.selector"
+                }
+            }
+        },
+        {
+            "match": "\\b(public|private|auto|ansi|beforefieldinit|static|hidebysig|specialname|rtspecialname|instance|cil|managed)\\b",
+            "name": "constant.language"
+        },
+        {
+            "match": "\\b(void|string)\\b (\\.?.+?\\().*?(\\))",
+            "captures": {
+                "1": {
+                    "name": "keyword.control"
+                },
+                "2": {
+                    "name": "entity.name.function"
+                },
+                "3": {
+                    "name": "entity.name.function"
+                }
+            }
+        },
+        {
+            "match": "^\\s*([A-Za-z_][A-Za-z_0-9]+:)?\\s*(br\\.s)\\s+([A-Za-z_][A-Za-z_0-9]+)\\b",
+            "captures": {
+                "1": {
+                    "name": "entity.name.tag.il"
+                },
+                "2": {
+                    "name": "entity.name.selector"
+                },
+                "3": {
+                    "name": "entity.name.tag.il"
+                }
+            }
+        },
+        {
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "string.value.il"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "string.value.il"
+                }
+            },
+            "name": "string.value.il",
+            "patterns": [
+                {
+                    "match": "\\\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[abfnrtv\\\\\\\"'\\&]|x[0-9a-fA-F]{1,5})",
+                    "name": "constant.character.escape.il"
+                },
+                {
+                    "match": "\\^[A-Z@\\[\\]\\\\\\^_]",
+                    "name": "constant.character.escape.control.il"
+                }
+            ]
+        },
+        {
+            "begin": "//",
+            "end": "$",
+            "name": "comment.line.double-dash.il"
+        }
+    ]
+}

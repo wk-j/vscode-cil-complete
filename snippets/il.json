@@ -1,0 +1,63 @@
+{
+    "Import External Library" : {
+        "prefix": "ext",
+        "body": [
+            ".assembly extern ${1:mscorlib} {}"
+        ]
+    },
+    "New Program": {
+        "prefix": "prog",
+        "body": [
+            ".assembly extern mscorlib {}",
+            ".assembly 'App' {}",
+            ".class private auto ansi beforefieldinit Program extends [mscorlib]System.Object {",
+            "\t.method private hidebysig static void Main ( string[] args) cil managed {",
+            "\t\t.entrypoint",
+            "\t\t${1}",
+            "\t\tret",
+            "\t}",
+            "\t.method public hidebysig specialname rtspecialname instance void .ctor () cil managed {",
+            "\t\tldarg.0",
+            "\t\tcall instance void [mscorlib]System.Object::.ctor()",
+            "\t\tret",
+            "\t}",
+            "} "
+        ]
+    },
+    "Public class": {
+        "prefix" : "pubc",
+        "body": [
+            ".class public auto ansi beforefieldinit ${1:Program} extends [mscorlib]System.Object {",
+            "\t.method public hidebysig specialname rtspecialname instance void .ctor () cil managed {",
+            "\t\t$2",
+            "\t}",
+            "}"
+        ]
+    },
+    "Private Class": {
+        "prefix": "pric",
+        "body": [
+            ".class private auto ansi beforefieldinit ${1:Program} extends [mscorlib]System.Object {",
+            "\t.method public hidebysig specialname rtspecialname instance void .ctor () cil managed {",
+            "\t\t$2",
+                "}",
+            "}"
+        ]
+    },
+    "Public Method": {
+        "prefix": "pubm", 
+        "body": [
+            ".method public hidebysig instance void ${1:M}() cil managed {",
+            "\t$2",
+            "}"
+        ]
+    },
+    "Private Method": {
+        "prefix": "prim", 
+        "body": [
+            ".method private hidebysig instance void ${1:M}() cil managed {",
+            "\t$2",
+            "}"
+        ]
+    }
+}

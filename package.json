@@ -1,0 +1,49 @@
+{
+    "name": "vscode-cil-complete",
+    "displayName": "IL Complete",
+    "description": "IL Syntax and Snippets",
+    "version": "0.0.1",
+    "publisher": "wk-j",
+    "icon": "images/icon.png",
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/wk-j/vscode-cil-complete"
+	},
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "il",
+                "path": "./snippets/il.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "il",
+                "aliases": [
+                    "IL",
+                    "il",                    
+                    "CIL",
+                    "MSIL"
+                ],
+                "extensions": [
+                    ".il"
+                ],
+                "configuration": "./configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "il",
+                "scopeName": "source.il",
+                "path": "./syntaxes/il.json"
+            }
+        ]
+    }
+}
