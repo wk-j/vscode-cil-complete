@@ -1,13 +1,38 @@
-## IL Syntax and Snippet
+## IL Syntax and Snippets
 
 ## Installation
 
-- `ext install vscode-cil-complete`
+> `ext install vscode-cil-complete`
 
 ## Snippets
 
-- `prog`
-- `pubc`
-- `pric`
-- `pubm`
-- `prim`
+- prog (New program)
+- pubc (Public class)
+- pric (Private class)
+- pubm (Public method)
+- prim (Private method)
+
+## Example
+
+```javascript
+prog<Tab>
+```
+
+## Result
+
+```csharp
+.assembly extern mscorlib {}
+.assembly 'App' {}
+.class private auto ansi beforefieldinit Program extends [mscorlib]System.Object {
+    .method private hidebysig static void Main ( string[] args) cil managed {
+        .entrypoint
+        
+        ret
+    }
+    .method public hidebysig specialname rtspecialname instance void .ctor () cil managed {
+        ldarg.0
+        call instance void [mscorlib]System.Object::.ctor()
+        ret
+    }
+} 
+```
