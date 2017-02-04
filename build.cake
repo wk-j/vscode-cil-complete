@@ -8,8 +8,8 @@ Task("Publish").Does(() => {
 
 Task("Icon").Does(() =>{
     CreateLogo("IL", "images/icon.png", new LogoSettings {
-        Background = "Indigo",
-        FontFamily = "Phosphate",
+        Background = "DeepSkyBlue",
+        //FontFamily = "Phosphate",
         Foreground = "White",
         Padding = 50
     });
