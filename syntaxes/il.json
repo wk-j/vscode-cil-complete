@@ -14,7 +14,7 @@
             "name": "keyword.control"
         },
         {
-            "match": "^\\s*([A-Za-z_][A-Za-z_0-9]+:)?\\s*(ret|nop|ldarg.\\d|ldstr|call|ldlen|stloc.\\d|ldloc.\\d|newobj|ldc.i4.\\d)\\b",
+            "match": "^\\s*([A-Za-z_][A-Za-z_0-9]+:)?\\s*(callvirt|ldfld|ret|nop|ldarg.\\d|ldstr|call|ldlen|stloc.\\d|ldloc.\\d|newobj|ldc.i4.\\d)\\b",
             "captures": {
                 "1": {
                     "name": "entity.name.tag"
@@ -25,7 +25,7 @@
             }
         },
         {
-            "match": "\\b(public|private|auto|ansi|beforefieldinit|static|hidebysig|specialname|rtspecialname|instance|cil|managed)\\b",
+            "match": "\\b(class|public|private|auto|ansi|beforefieldinit|static|hidebysig|specialname|rtspecialname|instance|cil|managed)\\b",
             "name": "constant.language"
         },
         {

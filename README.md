@@ -12,10 +12,10 @@
 - pubm (Public method)
 - prim (Private method)
 
-## Example
+## Sample
 
 ```javascript
-prog<Tab>
+prog<tab>
 ```
 
 ## Result

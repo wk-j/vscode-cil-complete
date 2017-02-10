@@ -2,7 +2,7 @@
     "name": "vscode-cil-complete",
     "displayName": "IL Complete",
     "description": "IL Syntax and Snippets",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "publisher": "wk-j",
     "icon": "images/icon.png",
     "repository": {
